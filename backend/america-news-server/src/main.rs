@@ -1,13 +1,15 @@
-// #[macro_use] extern crate rocket;
+#![feature(proc_macro_hygiene, decl_macro)]
+
 use std::path::{Path, PathBuf};
 
 use rocket_contrib::serve::StaticFiles;
 
-// #[get("/hello")]
-// fn index() -> &'static str {
-//     "Hello, world!"
-// }
+#[macro_use] extern crate rocket;
 
+#[get("/hello")]
+fn hello() -> String {
+    format!("¡Hola, mundo!")
+}
 
 fn main() {
     let base_project_path = Path::new(concat!(env!("CARGO_MANIFEST_DIR"))).parent().unwrap().parent().unwrap().to_str().unwrap();
@@ -22,12 +24,6 @@ fn main() {
 
     rocket::ignite()
         .mount("/", StaticFiles::from(static_files_path.to_str().unwrap()))
+        .mount("/api", routes![hello])
         .launch();
 }
-
-// #[launch]
-// fn rocket() -> _ {
-//     rocket::build()
-//         .mount("/", routes![index])
-//         .mount("/", StaticFiles::from(concat!(env!("CARGO_MANIFEST_DIR"), "/../../frontend/public")))
-// }

@@ -1,5 +1,5 @@
 [package]
-name = "hello-rocket"
+name = "america-news-server"
 version = "0.1.0"
 edition = "2021"
 
