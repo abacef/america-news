@@ -1,6 +1,8 @@
 <script>
 	export let name_from_prop;
 
+	import NavBar from "./NavBar.svelte"
+
 	async function getRocketResp() {
 		const res = await fetch('http://localhost:8000/api/hello');
 		const content = await res.json();
@@ -13,6 +15,8 @@
 	}
 
 </script>
+
+<NavBar></NavBar>
 
 {#await getRocketResp()}
 	<p>...waiting for response from rocket</p>
