@@ -1,15 +1,12 @@
 <script>
 	export let name_from_prop;
 
-	let name_from_rocket_promise = getRocketResp()
-
 	async function getRocketResp() {
 		const res = await fetch('http://localhost:8000/api/hello');
-		console.log(res)
-		const content = await res.text();
-		
+		const content = await res.json();
+
 		if (res.ok) {
-			return content;
+			return content.greeting;
 		} else {
 			throw new Error(body);
 		}
@@ -17,7 +14,7 @@
 
 </script>
 
-{#await name_from_rocket_promise}
+{#await getRocketResp()}
 	<p>...waiting for response from rocket</p>
 {:then rocket_resp}
 	<p>The response is: {rocket_resp}</p>
