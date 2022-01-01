@@ -84,7 +84,7 @@
       width: 100%;
       height: 2px;
       background-color: #fff;
-      transition: all 0.4s;
+      transition: all 0.0s;
       transform-origin: center;
     }
   
