@@ -1,15 +1,22 @@
 <script>
 	export let name_from_prop;
 
-	import NavBar from "./NavBar.svelte"
-
 	import {getGreeting} from "./api"
 
 </script>
 
+<table width="100%">
+	<tr>
+		<td>
+			<button>click for nav</button>
+		</td>
+		<td align="right">
+			<button>sign in</button>
+		</td>
+	</tr>
+</table>
 
 
-<button>Click me</button>
 
 {#await getGreeting()}
 	<p>...waiting for response from rocket</p>
@@ -19,9 +26,6 @@
 	<p style="color: red">{error.message}</p>
 {/await}
 
-
-
-<!-- <NavBar/> -->
 
 
 <!-- <div class="window" style="margin: 32px; width: 250px">
