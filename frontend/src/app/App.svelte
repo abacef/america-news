@@ -1,9 +1,14 @@
 <script>
-	export let name_from_prop;
+	// export let name_from_prop;
 
 	import {getGreeting} from "./api"
 
+    import Modal from './Modal.svelte';
+
+    let isOpenModal = false;
+
 </script>
+
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
 	<tr>
@@ -17,11 +22,12 @@
 			  </select>
 		</td>
 		<td align="right">
-			<button>sign in</button>
+			<button on:click={() => isOpenModal = true}>Sign In</button>
 		</td>
 	</tr>
 </table>
 
+<Modal isOpenModal={isOpenModal} on:closeModal={() => isOpenModal = false} />
 
 
 {#await getGreeting()}
