@@ -3,10 +3,6 @@
 
 	import {getGreeting} from "./api"
 
-    import Modal from './Modal.svelte';
-
-    let isOpenModal = false;
-
 </script>
 
 
@@ -19,15 +15,13 @@
 				<option>3 - Pretty good</option>
 				<option>2 - Not so great</option>
 				<option>1 - Unfortunate</option>
-			  </select>
+			</select>
 		</td>
 		<td align="right">
-			<button on:click={() => isOpenModal = true}>Sign In</button>
+			<button>Sign In</button>
 		</td>
 	</tr>
 </table>
-
-<Modal isOpenModal={isOpenModal} on:closeModal={() => isOpenModal = false} />
 
 
 {#await getGreeting()}
