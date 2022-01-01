@@ -5,10 +5,16 @@
 
 </script>
 
-<table width="100%">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
 	<tr>
 		<td>
-			<button>click for nav</button>
+			<select>
+				<option>5 - Incredible!</option>
+				<option>4 - Great!</option>
+				<option>3 - Pretty good</option>
+				<option>2 - Not so great</option>
+				<option>1 - Unfortunate</option>
+			  </select>
 		</td>
 		<td align="right">
 			<button>sign in</button>
@@ -25,29 +31,3 @@
 {:catch error}
 	<p style="color: red">{error.message}</p>
 {/await}
-
-
-
-<!-- <div class="window" style="margin: 32px; width: 250px">
-	<div class="title-bar">
-	<div class="title-bar-text">
-		My First VB4 Program
-	</div>
-
-	<div class="title-bar-controls">
-		<button aria-label="Minimize"></button>
-		<button aria-label="Maximize"></button>
-		<button aria-label="Close"></button>
-	</div>
-	</div>
-	<div class="window-body">
-	<p>Hello, world!</p>
-	<section class="field-row" style="justify-content: flex-end">
-		<button>OK</button>
-		<button>Cancel</button>
-	</section>
-	</div>
-</div> -->
-
-
-
