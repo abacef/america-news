@@ -14,7 +14,7 @@
 			</select>
 		</td>
 		<td align="right" style="vertical-align:top">
-			<button>Sign In</button>
+			<button on:click={() => push("/sign-in")}>Sign In</button>
 		</td>
 	</tr>
 </table>
