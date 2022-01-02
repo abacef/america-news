@@ -1,14 +1,15 @@
 <script>
 	import { Link } from "svelte-routing";
+
 </script>
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
 	<tr>
 		<td>
-			<ul class="tree-view">
+			<ul class="tree-view" style="width:100px">
 				<li>
 					<details>
-						<summary>Hamburger Menu</summary>
+						<summary>☰</summary>
 						<ul>
 							<li><Link to="/">Home</Link></li>
 							<li><Link to="about">About</Link></li>
