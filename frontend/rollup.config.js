@@ -51,7 +51,7 @@ export default {
 		// Copy the windows 98 style theme css file to the public directory
 		copy({
 			targets: [{ 
-                src: 'node_modules/98.css/dist/98.css', 
+                src: 'node_modules/98.css/dist/**/*', 
                 dest: 'public/vendor/98.css' 
             }]
 		}),
