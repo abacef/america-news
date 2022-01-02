@@ -3,31 +3,30 @@
 
 	import {getGreeting} from "./api"
 
+	import NavBar from "./NavBar.svelte"
+
+	import { Router, Route } from "svelte-routing";
+    import Home from "./routes/Home.svelte";
+    import About from "./routes/About.svelte";
+    import Blog from "./routes/Blog.svelte";
+
 </script>
 
+<Router url="">
+	<NavBar/>
 
-<table width="100%" border="0" cellspacing="0" cellpadding="0">
-	<tr>
-		<td>
-			<select>
-				<option>5 - Incredible!</option>
-				<option>4 - Great!</option>
-				<option>3 - Pretty good</option>
-				<option>2 - Not so great</option>
-				<option>1 - Unfortunate</option>
-			</select>
-		</td>
-		<td align="right">
-			<button>Sign In</button>
-		</td>
-	</tr>
-</table>
+	<div>
+		<Route path="blog" component="{Blog}" />
+		<Route path="about" component="{About}" />
+		<Route path="/"><Home /></Route>
+	</div>
 
+	{#await getGreeting()}
+		<p>...waiting for response from rocket</p>
+	{:then rocket_resp}
+		<p>The response is: {rocket_resp}</p>
+	{:catch error}
+		<p style="color: red">{error.message}</p>
+	{/await}
+</Router>
 
-{#await getGreeting()}
-	<p>...waiting for response from rocket</p>
-{:then rocket_resp}
-	<p>The response is: {rocket_resp}</p>
-{:catch error}
-	<p style="color: red">{error.message}</p>
-{/await}
