@@ -24,6 +24,7 @@
 
 <NavBar/>
 
+<!-- Where the content of what is rendered shows up -->
 <Router {routes}/>
 
 {#await getGreeting()}
