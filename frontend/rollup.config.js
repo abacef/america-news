@@ -48,7 +48,7 @@ export default {
 		// a separate file - better for performance
 		css({ output: 'bundle.css' }),
 
-		// Copy the windows 98 style theme css file to the public directory
+		// Copy the windows 98 style theme css files to the public directory
 		copy({
 			targets: [{ 
                 src: 'node_modules/98.css/dist/**/*', 
