@@ -1,4 +1,11 @@
 <script>
+    $: errorMessageUsername = username === "bad" ? "❌ username is bad" : null;
+    $: errorMessagePassword = password === "bad" ? "❌ password is bad" : null;
+
+
+    let username = "";
+    let password = "";
+
 
 </script>
 
@@ -7,6 +14,20 @@
         <div class="title-bar-text">Sign In</div>
     </div>
     <div class="window-body">
-      <p>This is wear sign in UI components can be putted</p>
+        <div class="field-row-stacked" style="width: 200px">
+            <input id="username-field" type="text" placeholder="Username" bind:value={username}/>
+            <label for="username-field">{errorMessageUsername || "…"}</label>
+        </div>
+        <div class="field-row-stacked" style="width: 200px">
+            <input id="password-field" type="text" placeholder="Password" bind:value={password}/>
+            <label for="password-field">{errorMessagePassword || "…"}</label>
+        </div>
+        <table width="100%" border="0" cellspacing="0" cellpadding="0">
+            <tr>
+                <td align="right">
+                    <button>Sign Up</button>
+                </td>
+            </tr>
+        </table>
     </div>
 </div>
