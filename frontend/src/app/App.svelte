@@ -1,25 +1,25 @@
 <script>
-	// export let name_from_prop;
+    // export let name_from_prop;
 
-	import {getGreeting} from "./api"
+    import {getGreeting} from "./api"
 
-	import NavBar from "./NavBar.svelte"
+    import NavBar from "./NavBar.svelte"
 
-	import Router from 'svelte-spa-router'
+    import Router from 'svelte-spa-router'
 
     import Home from "./routes/Home.svelte";
     import About from "./routes/About.svelte";
     import Blog from "./routes/Blog.svelte";
-	import SignIn from "./routes/SignIn.svelte"
-	import NotFound from "./routes/NotFound.svelte";
+    import SignIn from "./routes/SignIn.svelte"
+    import NotFound from "./routes/NotFound.svelte";
 
-	const routes = {
-		'/': Home,
-		'/about': About,
-		'/blog': Blog,
-		'/sign-in': SignIn,
-		'*': NotFound,
-	}
+    const routes = {
+        '/': Home,
+        '/about': About,
+        '/blog': Blog,
+        '/sign-in': SignIn,
+        '*': NotFound,
+    }
 
 </script>
 
@@ -30,11 +30,11 @@
 <Router {routes}/>
 
 {#await getGreeting()}
-	<p>...waiting for response from rocket</p>
+    <p>...waiting for response from rocket</p>
 {:then rocket_resp}
-	<p>We are connected to the rocket server!: {rocket_resp}</p>
+    <p>We are connected to the rocket server!: {rocket_resp}</p>
 {:catch error}
-	<p style="color: red">{error.message}</p>
+    <p style="color: red">{error.message}</p>
 {/await}
 
 
