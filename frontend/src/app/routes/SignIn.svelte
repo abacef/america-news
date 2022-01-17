@@ -1,10 +1,23 @@
 <script>
+
+    import users from "../logins";
+
     $: errorMessageUsername = username === "bad" ? "❌ username is bad" : "";
     $: errorMessagePassword = password === "bad" ? "❌ password is bad" : "";
 
 
     let username = "";
     let password = "";
+
+    let serverErrorMessage = "";
+
+    function signIn() {
+        if (!users.addUser(username, password)) {
+            serverErrorMessage = "Username already in use. Choose another one";
+        } else {
+            serverErrorMessage = "yay";
+        }
+    }
 
 
 </script>
@@ -23,10 +36,12 @@
             <input id="password-field" type="text" placeholder="Password" bind:value={password}/>
             <label for="password-field">{errorMessagePassword}</label>
         </div>
+        <br>
+        {serverErrorMessage}
         <table width="100%" border="0" cellspacing="0" cellpadding="0">
             <tr>
                 <td align="right">
-                    <button>Sign Up</button>
+                    <button disabled={errorMessageUsername != "" || errorMessagePassword != ""} on:click={signIn}>Sign Up</button>
                 </td>
             </tr>
         </table>
