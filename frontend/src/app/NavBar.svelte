@@ -1,7 +1,5 @@
 <script>
 
-    import {push} from 'svelte-spa-router'
-
     var isBurgerOpen = false;
 
     function toggleBurgerMenu() {
@@ -34,15 +32,15 @@
                 Blog
             </a>
         </div>
-  
+
         <div class="navbar-end">
             <div class="navbar-item">
                 <div class="buttons">
-                    <a class="button is-primary">
-                    <strong>Sign up</strong>
+                    <a class="button is-primary" href="/#/sign-up">
+                        <strong>Sign up</strong>
                     </a>
                     <a class="button is-light">
-                    Log in
+                        Log in
                     </a>
                 </div>
             </div>

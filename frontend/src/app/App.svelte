@@ -12,11 +12,13 @@
     import Blog from "./routes/Blog.svelte";
     import SignIn from "./routes/SignIn.svelte"
     import NotFound from "./routes/NotFound.svelte";
+    import SignUp from "./routes/sign_up/SignUp.svelte";
 
     const routes = {
         '/': Home,
         '/about': About,
         '/blog': Blog,
+        '/sign-up': SignUp,
         '/sign-in': SignIn,
         '*': NotFound,
     }
